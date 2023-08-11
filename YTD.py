@@ -1,12 +1,18 @@
 
-import pytube 
-a=input("video url-")
-fetch = pytube.YouTube(a)
-filter = fetch.streams.filter(progressive=True, file_extension='mp4')
-filter.get_highest_resolution().download()
-print("Download finished")
-exit=input()
+# Open file location in CMD and enter python youtube.py
+# then paste in the video URL
+
+from pytube import YouTube
+
+def Download(link):
+    youtubeObject = YouTube(link)
+    youtubeObject = youtubeObject.streams.get_highest_resolution()
+    try:
+        youtubeObject.download()
+    except:
+        print("An error has occurred")
+    print("Download is completed successfully")
 
 
-
-
+link = input("Enter the YouTube video URL: ")
+Download(link)
