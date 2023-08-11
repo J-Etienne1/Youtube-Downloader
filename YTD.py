@@ -1,5 +1,5 @@
 
-# Open file location in CMD and enter python youtube.py
+# Open file location in CMD and enter python YTD.py
 # then paste in the video URL
 
 from pytube import YouTube
